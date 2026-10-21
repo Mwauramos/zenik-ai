@@ -7,11 +7,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
       --bg: #080c14;
-      --surface: #0f1520;
-      --card: #131b2a;
+      --surface: #0d1320;
+      --card: #111827;
       --border: #1e2d45;
       --blue: #2563eb;
       --blue-light: #3b82f6;
@@ -20,190 +19,84 @@
       --muted: #6b7fa3;
       --tag-bg: #0f1e35;
     }
-
     html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--white); font-family: 'Inter', sans-serif; line-height: 1.6; }
 
-    body {
-      background: var(--bg);
-      color: var(--white);
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6;
-    }
-
-    /* NAV */
     nav {
       position: fixed; top: 0; width: 100%; z-index: 100;
-      background: rgba(8,12,20,0.92);
-      backdrop-filter: blur(12px);
+      background: rgba(8,12,20,0.92); backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
       padding: 14px 40px;
       display: flex; align-items: center; justify-content: space-between;
     }
-    nav img { height: 32px; }
+    nav img { height: 36px; }
     nav ul { list-style: none; display: flex; gap: 32px; }
-    nav ul a {
-      color: var(--muted); text-decoration: none;
-      font-size: 14px; font-weight: 500;
-      transition: color 0.2s;
-    }
+    nav ul a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
     nav ul a:hover { color: var(--white); }
 
-    /* HERO */
     .hero {
       min-height: 100vh;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      text-align: center;
-      padding: 120px 24px 80px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; padding: 120px 24px 80px;
       background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(37,99,235,0.12) 0%, transparent 70%);
     }
-    .hero img { height: 90px; margin-bottom: 32px; }
+    .hero img { height: 120px; margin-bottom: 36px; }
     .hero h1 {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(36px, 6vw, 64px);
-      font-weight: 700;
-      line-height: 1.1;
-      margin-bottom: 20px;
+      font-size: clamp(38px, 6vw, 68px); font-weight: 700; line-height: 1.1; margin-bottom: 20px;
     }
     .hero h1 span { color: var(--blue-light); }
-    .hero p {
-      font-size: clamp(15px, 2vw, 18px);
-      color: var(--muted);
-      max-width: 620px;
-      margin-bottom: 40px;
-    }
+    .hero p { font-size: clamp(15px, 2vw, 18px); color: var(--muted); max-width: 600px; margin-bottom: 40px; }
     .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
-    .btn {
-      padding: 12px 28px; border-radius: 8px;
-      font-size: 14px; font-weight: 600;
-      text-decoration: none; transition: all 0.2s;
-      cursor: pointer;
-    }
-    .btn-primary {
-      background: var(--blue); color: #fff;
-      border: 1px solid var(--blue);
-    }
+    .btn { padding: 12px 28px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; transition: all 0.2s; cursor: pointer; }
+    .btn-primary { background: var(--blue); color: #fff; border: 1px solid var(--blue); }
     .btn-primary:hover { background: var(--blue-light); }
-    .btn-outline {
-      background: transparent; color: var(--white);
-      border: 1px solid var(--border);
-    }
+    .btn-outline { background: transparent; color: var(--white); border: 1px solid var(--border); }
     .btn-outline:hover { border-color: var(--blue-light); color: var(--blue-light); }
 
-    .stats {
-      display: flex; gap: 48px; margin-top: 64px;
-      flex-wrap: wrap; justify-content: center;
-    }
+    .stats { display: flex; gap: 48px; margin-top: 64px; flex-wrap: wrap; justify-content: center; }
     .stat { text-align: center; }
-    .stat-num {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 36px; font-weight: 700;
-      color: var(--blue-light);
-    }
+    .stat-num { font-family: 'Space Grotesk', sans-serif; font-size: 36px; font-weight: 700; color: var(--blue-light); }
     .stat-label { font-size: 13px; color: var(--muted); margin-top: 4px; }
 
-    /* SECTIONS */
     section { padding: 80px 24px; max-width: 1100px; margin: 0 auto; }
-    .section-label {
-      font-size: 12px; font-weight: 600; letter-spacing: 2px;
-      color: var(--blue-light); text-transform: uppercase; margin-bottom: 12px;
-    }
-    .section-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(24px, 4vw, 36px); font-weight: 700;
-      margin-bottom: 48px;
-    }
+    .section-label { font-size: 12px; font-weight: 600; letter-spacing: 2px; color: var(--blue-light); text-transform: uppercase; margin-bottom: 12px; }
+    .section-title { font-family: 'Space Grotesk', sans-serif; font-size: clamp(24px, 4vw, 36px); font-weight: 700; margin-bottom: 48px; }
 
-    /* PROJECTS */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 20px;
-    }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
     .project-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 24px;
+      background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px;
       transition: border-color 0.2s, transform 0.2s;
+      display: flex; flex-direction: column;
     }
-    .project-card:hover {
-      border-color: var(--blue);
-      transform: translateY(-2px);
-    }
-    .card-top {
-      display: flex; align-items: flex-start;
-      justify-content: space-between; margin-bottom: 12px;
-    }
+    .project-card:hover { border-color: var(--blue); transform: translateY(-2px); }
+    .card-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 12px; }
     .card-icon { font-size: 28px; }
     .live-badge {
       font-size: 11px; font-weight: 600;
-      background: rgba(6,182,212,0.15);
-      color: var(--cyan); border: 1px solid rgba(6,182,212,0.3);
-      padding: 3px 10px; border-radius: 20px;
+      background: rgba(6,182,212,0.15); color: var(--cyan);
+      border: 1px solid rgba(6,182,212,0.3); padding: 3px 10px; border-radius: 20px;
     }
-    .project-card h3 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 16px; font-weight: 600;
-      margin-bottom: 8px;
-    }
-    .project-card p {
-      font-size: 13px; color: var(--muted);
-      margin-bottom: 16px; line-height: 1.6;
-    }
+    .project-card h3 { font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+    .project-card .subtitle { font-size: 12px; color: var(--blue-light); font-weight: 500; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .project-card p { font-size: 13px; color: var(--muted); margin-bottom: 16px; line-height: 1.6; flex: 1; }
     .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
-    .tag {
-      font-size: 11px; font-weight: 500;
-      background: var(--tag-bg); color: var(--muted);
-      border: 1px solid var(--border);
-      padding: 3px 10px; border-radius: 20px;
-    }
-    .card-links { display: flex; gap: 12px; }
-    .card-link {
-      font-size: 12px; font-weight: 600;
-      color: var(--blue-light); text-decoration: none;
-      transition: color 0.2s;
-    }
+    .tag { font-size: 11px; font-weight: 500; background: var(--tag-bg); color: var(--muted); border: 1px solid var(--border); padding: 3px 10px; border-radius: 20px; }
+    .card-links { display: flex; gap: 12px; margin-top: auto; }
+    .card-link { font-size: 12px; font-weight: 600; color: var(--blue-light); text-decoration: none; transition: color 0.2s; }
     .card-link:hover { color: var(--cyan); }
 
-    /* ABOUT */
-    .about-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 48px;
-      align-items: center;
-    }
-    .about-text p { color: var(--muted); margin-bottom: 16px; font-size: 15px; }
-    .skills-list {
-      display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px;
-    }
-    .skill-pill {
-      background: var(--tag-bg); border: 1px solid var(--border);
-      color: var(--white); font-size: 13px; font-weight: 500;
-      padding: 6px 16px; border-radius: 20px;
-    }
-    .about-card {
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: 16px; padding: 32px;
-    }
-    .about-card h3 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 18px; margin-bottom: 20px;
-    }
-    .about-item {
-      display: flex; gap: 12px; margin-bottom: 16px; align-items: flex-start;
-    }
-    .about-item-icon { font-size: 20px; margin-top: 2px; }
-    .about-item-text { font-size: 14px; color: var(--muted); }
-    .about-item-text strong { color: var(--white); display: block; margin-bottom: 2px; }
+    .about-wrap { background: var(--surface); }
+    .about-inner { max-width: 1100px; margin: 0 auto; padding: 80px 24px; }
+    .about-text p { color: var(--muted); margin-bottom: 16px; font-size: 15px; line-height: 1.8; }
+    .about-text p strong { color: var(--white); }
+    .skills-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+    .skill-pill { background: var(--tag-bg); border: 1px solid var(--border); color: var(--white); font-size: 13px; font-weight: 500; padding: 6px 16px; border-radius: 20px; }
 
-    /* CONTACT */
-    .contact-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 16px;
-    }
+    .contact-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
     .contact-card {
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: 12px; padding: 24px; text-align: center;
-      text-decoration: none; color: var(--white);
+      background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px;
+      text-align: center; text-decoration: none; color: var(--white);
       transition: border-color 0.2s, transform 0.2s;
     }
     .contact-card:hover { border-color: var(--blue); transform: translateY(-2px); }
@@ -211,24 +104,19 @@
     .contact-card .label { font-size: 13px; color: var(--muted); margin-bottom: 4px; }
     .contact-card .value { font-size: 14px; font-weight: 600; color: var(--blue-light); }
 
-    /* FOOTER */
-    footer {
-      border-top: 1px solid var(--border);
-      text-align: center; padding: 32px 24px;
-      color: var(--muted); font-size: 13px;
-    }
-    footer img { height: 24px; margin-bottom: 12px; display: block; margin-inline: auto; }
+    footer { border-top: 1px solid var(--border); text-align: center; padding: 32px 24px; color: var(--muted); font-size: 13px; }
+    footer img { height: 28px; margin-bottom: 12px; display: block; margin-inline: auto; }
 
     @media (max-width: 768px) {
       nav ul { display: none; }
-      .about-grid { grid-template-columns: 1fr; }
+      nav { padding: 14px 20px; }
     }
   </style>
 </head>
 <body>
 
 <nav>
-  <img src="assets/logo.png.png" alt="ZENIK.AI"/>
+  <img src="assets/logo.png" alt="ZENIK.AI"/>
   <ul>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#about">About</a></li>
@@ -236,24 +124,22 @@
   </ul>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
-  <img src="assets/logo.png.png" alt="ZENIK.AI Logo"/>
-  <h1>Healthcare AI<br/><span>for African Systems</span></h1>
-  <p>Production-grade AI engineering for epidemiology, clinical NLP, real-time health monitoring, and LLM systems — built for the African health context.</p>
+  <img src="assets/logo.png" alt="ZENIK.AI Logo"/>
+  <h1>Healthcare AI Engineer<br/><span>for African Systems</span></h1>
+  <p>Building reliable data pipelines, clinical AI systems, and LLM applications for African health contexts. Precision in the data. Rigour in the methods. Impact in the real world.</p>
   <div class="hero-btns">
     <a href="#projects" class="btn btn-primary">View Projects</a>
     <a href="https://github.com/Mwauramos" target="_blank" class="btn btn-outline">GitHub</a>
   </div>
   <div class="stats">
     <div class="stat"><div class="stat-num">14</div><div class="stat-label">Projects Built</div></div>
+    <div class="stat"><div class="stat-num">12</div><div class="stat-label">Live Deployments</div></div>
     <div class="stat"><div class="stat-num">1</div><div class="stat-label">Fine-Tuned LLM</div></div>
-    <div class="stat"><div class="stat-num">3</div><div class="stat-label">Live Deployments</div></div>
     <div class="stat"><div class="stat-num">10+</div><div class="stat-label">ML Frameworks</div></div>
   </div>
 </div>
 
-<!-- PROJECTS -->
 <section id="projects">
   <div class="section-label">Portfolio</div>
   <div class="section-title">Projects</div>
@@ -262,213 +148,202 @@
     <div class="project-card">
       <div class="card-top"><div class="card-icon">🧬</div><span class="live-badge">LIVE</span></div>
       <h3>AI Study Design Agent</h3>
-      <p>Multi-agent LangGraph system that generates full epidemiological study protocols from a research question using GPT-4o.</p>
+      <div class="subtitle">Research AI · LLM Engineering</div>
+      <p>Multi-agent LangGraph system that turns a research question into a complete epidemiological study protocol including study design, sample size, confounders, and a grant-ready protocol document.</p>
       <div class="tags"><span class="tag">LangGraph</span><span class="tag">GPT-4o</span><span class="tag">Streamlit</span><span class="tag">LangChain</span></div>
       <div class="card-links">
-        <a href="https://study-design-agent.streamlit.app" target="_blank" class="card-link">Live Demo →</a>
-        <a href="https://github.com/Mwauramos/study-design-agent" target="_blank" class="card-link">GitHub →</a>
+        <a href="https://study-design-agent-nxw7lx8xzv4yhjkm9mannj.streamlit.app" target="_blank" class="card-link">Live Demo</a>
+        <a href="https://github.com/Mwauramos/study-design-agent" target="_blank" class="card-link">GitHub</a>
       </div>
     </div>
 
     <div class="project-card">
       <div class="card-top"><div class="card-icon">🏥</div><span class="live-badge">LIVE</span></div>
       <h3>Kenya Health Data Lake</h3>
-      <p>End-to-end ETL pipeline extracting, validating, transforming, and loading Kenya county health data with an interactive dashboard.</p>
+      <div class="subtitle">Data Engineering · Analytics</div>
+      <p>End-to-end ETL pipeline extracting, validating, transforming, and loading Kenya county health data. Orchestrated with Apache Airflow. Includes an interactive dashboard with county risk classification and disease burden scores.</p>
       <div class="tags"><span class="tag">Airflow</span><span class="tag">pandas</span><span class="tag">SQLAlchemy</span><span class="tag">Streamlit</span></div>
       <div class="card-links">
-        <a href="https://kenya-health-datalake-hk3ymlytfnf9nmsypsasww.streamlit.app" target="_blank" class="card-link">Live Demo →</a>
-        <a href="https://github.com/Mwauramos/kenya-health-datalake" target="_blank" class="card-link">GitHub →</a>
+        <a href="https://kenya-health-datalake-hk3ymlytfnf9nmsypsasww.streamlit.app" target="_blank" class="card-link">Live Demo</a>
+        <a href="https://github.com/Mwauramos/kenya-health-datalake" target="_blank" class="card-link">GitHub</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="card-top"><div class="card-icon">🗺️</div><span class="live-badge">LIVE</span></div>
+      <h3>Geospatial Disease Burden</h3>
+      <div class="subtitle">Epidemiology · Spatial Analysis</div>
+      <p>Interactive choropleth dashboard mapping disease burden across all 47 Kenya counties. Uses Global Moran's I and LISA cluster detection to identify spatial hotspots and cold spots for malaria, cholera, dengue, and measles.</p>
+      <div class="tags"><span class="tag">GeoPandas</span><span class="tag">Folium</span><span class="tag">PySAL</span><span class="tag">Streamlit</span></div>
+      <div class="card-links">
+        <a href="https://geospatial-disease-burden-38x4qkos76gggyzhwza4zc.streamlit.app" target="_blank" class="card-link">Live Demo</a>
+        <a href="https://github.com/Mwauramos/geospatial-disease-burden" target="_blank" class="card-link">GitHub</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="card-top"><div class="card-icon">🦠</div><span class="live-badge">LIVE</span></div>
+      <h3>Outbreak Forecasting</h3>
+      <div class="subtitle">Epidemiology · Statistical Modelling</div>
+      <p>Disease surveillance dashboard combining CUSUM anomaly detection, SEIR compartmental modelling, and Prophet and XGBoost forecasting. Built for Kenya MOH contexts with early outbreak warning and scenario planning.</p>
+      <div class="tags"><span class="tag">Prophet</span><span class="tag">XGBoost</span><span class="tag">SEIR</span><span class="tag">Streamlit</span></div>
+      <div class="card-links">
+        <a href="https://outbreak-forecasting-tash4mpblkma4bmibxrevo.streamlit.app" target="_blank" class="card-link">Live Demo</a>
+        <a href="https://github.com/Mwauramos/outbreak-forecasting" target="_blank" class="card-link">GitHub</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="card-top"><div class="card-icon">⚙️</div><span class="live-badge">LIVE</span></div>
+      <h3>Clinical Workflow Agent</h3>
+      <div class="subtitle">Agentic AI · Clinical Decision Support</div>
+      <p>Four-agent LangGraph system for clinical decision support in East African health contexts. Agents handle retrieval from WHO protocols, differential diagnosis generation, safety validation, and clinical handover document production.</p>
+      <div class="tags"><span class="tag">LangGraph</span><span class="tag">GPT-4o</span><span class="tag">LangChain</span><span class="tag">Streamlit</span></div>
+      <div class="card-links">
+        <a href="https://clinical-workflow-agent-rxzywwzktk23ebkbpnjscc.streamlit.app" target="_blank" class="card-link">Live Demo</a>
+        <a href="https://github.com/Mwauramos/clinical-workflow-agent" target="_blank" class="card-link">GitHub</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="card-top"><div class="card-icon">🕵️</div><span class="live-badge">LIVE</span></div>
+      <h3>Kenya Health Surveillance RAG</h3>
+      <div class="subtitle">RAG · LLM Engineering</div>
+      <p>Production RAG system that answers natural language questions about Kenya health indicators and disease surveillance data. Every answer is grounded in source documents with citations and relevance scores via GPT-4o and Pinecone.</p>
+      <div class="tags"><span class="tag">LlamaIndex</span><span class="tag">Pinecone</span><span class="tag">GPT-4o</span><span class="tag">Streamlit</span></div>
+      <div class="card-links">
+        <a href="https://health-rag-data-pipeline-gjjxxgchk3pn3rjshropqd.streamlit.app" target="_blank" class="card-link">Live Demo</a>
+        <a href="https://github.com/Mwauramos/health-rag-data-pipeline" target="_blank" class="card-link">GitHub</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="card-top"><div class="card-icon">📊</div><span class="live-badge">LIVE</span></div>
+      <h3>LLMOps Pipeline</h3>
+      <div class="subtitle">LLMOps · MLflow · Evaluation</div>
+      <p>Production monitoring dashboard for the Kenya Health RAG system. Runs automated evaluation with GPT-4o-mini as judge, tracks faithfulness and relevancy, enforces deployment quality gates, and logs all runs to MLflow.</p>
+      <div class="tags"><span class="tag">LlamaIndex</span><span class="tag">MLflow</span><span class="tag">GPT-4o</span><span class="tag">Streamlit</span></div>
+      <div class="card-links">
+        <a href="https://llmops-pipeline-kogiqm8rpednrxgwjciu7t.streamlit.app" target="_blank" class="card-link">Live Demo</a>
+        <a href="https://github.com/Mwauramos/llmops-pipeline" target="_blank" class="card-link">GitHub</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="card-top"><div class="card-icon">🔬</div><span class="live-badge">LIVE</span></div>
+      <h3>Malaria and TB Outcome Predictor</h3>
+      <div class="subtitle">Clinical Prediction · Fairness Audit</div>
+      <p>XGBoost clinical prediction tool for severe malaria and TB treatment failure risk. Includes SHAP explainability for individual predictions and a demographic fairness audit identifying performance gaps across sex and age subgroups.</p>
+      <div class="tags"><span class="tag">XGBoost</span><span class="tag">SHAP</span><span class="tag">Scikit-learn</span><span class="tag">Streamlit</span></div>
+      <div class="card-links">
+        <a href="https://malaria-tb-prediction-kfor9qd9ucayu2zqvg7saj.streamlit.app" target="_blank" class="card-link">Live Demo</a>
+        <a href="https://github.com/Mwauramos/malaria-tb-prediction" target="_blank" class="card-link">GitHub</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="card-top"><div class="card-icon">🫁</div><span class="live-badge">LIVE</span></div>
+      <h3>Chest X-Ray Diagnostics</h3>
+      <div class="subtitle">Computer Vision · Explainable AI</div>
+      <p>ResNet18 transfer learning model classifying chest X-rays as Normal, Pneumonia, or TB. Generates Grad-CAM heatmaps showing which lung regions drove the prediction, making the model auditable and reviewable.</p>
+      <div class="tags"><span class="tag">PyTorch</span><span class="tag">ResNet18</span><span class="tag">Grad-CAM</span><span class="tag">Streamlit</span></div>
+      <div class="card-links">
+        <a href="https://chest-xray-diagnostics-flwaluxacc6sy5dygguaca.streamlit.app" target="_blank" class="card-link">Live Demo</a>
+        <a href="https://github.com/Mwauramos/chest-xray-diagnostics" target="_blank" class="card-link">GitHub</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="card-top"><div class="card-icon">📈</div><span class="live-badge">LIVE</span></div>
+      <h3>Model Drift Detection</h3>
+      <div class="subtitle">MLOps · Production Monitoring</div>
+      <p>Production monitoring system detecting data drift in the Kenya malaria prediction model across seasonal shifts, bed net distribution campaigns, and outbreak events using Evidently AI with interactive distribution comparisons.</p>
+      <div class="tags"><span class="tag">Evidently AI</span><span class="tag">Scikit-learn</span><span class="tag">Plotly</span><span class="tag">Streamlit</span></div>
+      <div class="card-links">
+        <a href="https://model-monitoring-ez8ldvctczi67gypzrj48n.streamlit.app" target="_blank" class="card-link">Live Demo</a>
+        <a href="https://github.com/Mwauramos/model-monitoring" target="_blank" class="card-link">GitHub</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="card-top"><div class="card-icon">🧪</div><span class="live-badge">LIVE</span></div>
+      <h3>Clinical NER Pipeline</h3>
+      <div class="subtitle">Clinical NLP · Information Extraction</div>
+      <p>Hybrid NER system combining rule-based matching and a biomedical transformer to extract diseases, study designs, populations, risk factors, locations, interventions, and statistics from East African epidemiology abstracts.</p>
+      <div class="tags"><span class="tag">spaCy</span><span class="tag">Transformers</span><span class="tag">HuggingFace</span><span class="tag">Streamlit</span></div>
+      <div class="card-links">
+        <a href="https://clinical-ner-pipeline-pua7w9ovmxrflqtcuungsn.streamlit.app" target="_blank" class="card-link">Live Demo</a>
+        <a href="https://github.com/Mwauramos/clinical-ner-pipeline" target="_blank" class="card-link">GitHub</a>
       </div>
     </div>
 
     <div class="project-card">
       <div class="card-top"><div class="card-icon">🤖</div><span class="live-badge">LIVE</span></div>
       <h3>African Health LLM</h3>
-      <p>LLaMA-3.2 3B fine-tuned on East African epidemiology and public health literature using QLoRA on Google Colab.</p>
+      <div class="subtitle">LLM Fine-Tuning · QLoRA</div>
+      <p>LLaMA-3.2 3B fine-tuned on East African epidemiology and public health literature using QLoRA on Google Colab. Trained to improve response quality on African health system contexts where base models underperform.</p>
       <div class="tags"><span class="tag">LLaMA-3.2</span><span class="tag">QLoRA</span><span class="tag">Unsloth</span><span class="tag">HuggingFace</span></div>
       <div class="card-links">
-        <a href="https://huggingface.co/mwauramos/african-health-llm" target="_blank" class="card-link">Hugging Face →</a>
+        <a href="https://huggingface.co/mwauramos/african-health-llm" target="_blank" class="card-link">Hugging Face</a>
       </div>
     </div>
 
     <div class="project-card">
       <div class="card-top"><div class="card-icon">📡</div></div>
       <h3>Real-Time Health Metrics Dashboard</h3>
-      <p>Live-streaming patient vitals monitoring dashboard with critical alert detection across 10 Kenya county hospitals.</p>
+      <div class="subtitle">Streaming · Event-Driven Systems</div>
+      <p>Live-streaming patient vitals dashboard simulating real-time data from 10 Kenya county hospitals. Auto-detects critical conditions including tachycardia, hypertensive crisis, and low SpO2 with a county-level alert feed.</p>
       <div class="tags"><span class="tag">Plotly Dash</span><span class="tag">Threading</span><span class="tag">pandas</span><span class="tag">NumPy</span></div>
       <div class="card-links">
-        <a href="https://github.com/Mwauramos/realtime-health-dashboard" target="_blank" class="card-link">GitHub →</a>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="card-top"><div class="card-icon">🫁</div></div>
-      <h3>Chest X-Ray Diagnostics</h3>
-      <p>Deep learning model for automated chest X-ray interpretation, detecting pneumonia and TB from radiograph images.</p>
-      <div class="tags"><span class="tag">Computer Vision</span><span class="tag">CNN</span><span class="tag">PyTorch</span><span class="tag">FastAI</span></div>
-      <div class="card-links">
-        <a href="https://github.com/Mwauramos/chest-xray-diagnostics" target="_blank" class="card-link">GitHub →</a>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="card-top"><div class="card-icon">🗺️</div></div>
-      <h3>Geospatial Disease Burden</h3>
-      <p>Interactive geospatial analysis of disease burden across Kenya counties using choropleth maps and epidemiological indices.</p>
-      <div class="tags"><span class="tag">GeoPandas</span><span class="tag">Folium</span><span class="tag">Plotly</span><span class="tag">Streamlit</span></div>
-      <div class="card-links">
-        <a href="https://github.com/Mwauramos/geospatial-disease-burden" target="_blank" class="card-link">GitHub →</a>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="card-top"><div class="card-icon">🧪</div></div>
-      <h3>Clinical NER Pipeline</h3>
-      <p>Named entity recognition pipeline extracting diseases, drugs, symptoms, and clinical findings from African health records.</p>
-      <div class="tags"><span class="tag">spaCy</span><span class="tag">NLP</span><span class="tag">Transformers</span><span class="tag">Python</span></div>
-      <div class="card-links">
-        <a href="https://github.com/Mwauramos/clinical-ner-pipeline" target="_blank" class="card-link">GitHub →</a>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="card-top"><div class="card-icon">🔬</div></div>
-      <h3>Malaria and TB Prediction</h3>
-      <p>Machine learning models predicting malaria and tuberculosis risk using Kenya county-level epidemiological features.</p>
-      <div class="tags"><span class="tag">Scikit-learn</span><span class="tag">XGBoost</span><span class="tag">pandas</span><span class="tag">SHAP</span></div>
-      <div class="card-links">
-        <a href="https://github.com/Mwauramos/malaria-tb-prediction" target="_blank" class="card-link">GitHub →</a>
+        <a href="https://github.com/Mwauramos/realtime-health-dashboard" target="_blank" class="card-link">GitHub</a>
       </div>
     </div>
 
     <div class="project-card">
       <div class="card-top"><div class="card-icon">🏨</div></div>
       <h3>Hospital Readmission Predictor</h3>
-      <p>Predicts 30-day hospital readmission risk for chronic disease patients using structured clinical data.</p>
-      <div class="tags"><span class="tag">Scikit-learn</span><span class="tag">SHAP</span><span class="tag">Streamlit</span><span class="tag">pandas</span></div>
+      <div class="subtitle">Clinical Prediction · ML</div>
+      <p>Predicts 30-day hospital readmission risk for chronic disease patients using structured clinical features with SHAP explainability to identify the patient-level factors driving each prediction.</p>
+      <div class="tags"><span class="tag">Scikit-learn</span><span class="tag">SHAP</span><span class="tag">XGBoost</span><span class="tag">pandas</span></div>
       <div class="card-links">
-        <a href="https://github.com/Mwauramos/hospital-readmission" target="_blank" class="card-link">GitHub →</a>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="card-top"><div class="card-icon">🦠</div></div>
-      <h3>Outbreak Forecasting</h3>
-      <p>Time-series forecasting of infectious disease outbreaks in Kenya using ARIMA and Prophet models.</p>
-      <div class="tags"><span class="tag">Prophet</span><span class="tag">ARIMA</span><span class="tag">Time Series</span><span class="tag">Plotly</span></div>
-      <div class="card-links">
-        <a href="https://github.com/Mwauramos/outbreak-forecasting" target="_blank" class="card-link">GitHub →</a>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="card-top"><div class="card-icon">🕵️</div></div>
-      <h3>Kenya Surveillance RAG</h3>
-      <p>Retrieval-augmented generation system for querying Kenya disease surveillance reports and epidemiological bulletins.</p>
-      <div class="tags"><span class="tag">RAG</span><span class="tag">LangChain</span><span class="tag">FAISS</span><span class="tag">OpenAI</span></div>
-      <div class="card-links">
-        <a href="https://github.com/Mwauramos/kenya-surveillance-rag" target="_blank" class="card-link">GitHub →</a>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="card-top"><div class="card-icon">⚙️</div></div>
-      <h3>Clinical Workflow Agent</h3>
-      <p>Agentic AI system automating clinical documentation and workflow tasks using LangGraph and tool-calling.</p>
-      <div class="tags"><span class="tag">LangGraph</span><span class="tag">Tool Calling</span><span class="tag">LangChain</span><span class="tag">GPT-4o</span></div>
-      <div class="card-links">
-        <a href="https://github.com/Mwauramos/clinical-workflow-agent" target="_blank" class="card-link">GitHub →</a>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="card-top"><div class="card-icon">📊</div></div>
-      <h3>LLMOps Pipeline</h3>
-      <p>Production LLMOps pipeline with prompt versioning, evaluation, cost tracking, and model monitoring for health AI systems.</p>
-      <div class="tags"><span class="tag">LLMOps</span><span class="tag">MLflow</span><span class="tag">LangSmith</span><span class="tag">Python</span></div>
-      <div class="card-links">
-        <a href="https://github.com/Mwauramos/llmops-pipeline" target="_blank" class="card-link">GitHub →</a>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="card-top"><div class="card-icon">📈</div></div>
-      <h3>Model Monitoring</h3>
-      <p>ML model monitoring system tracking data drift, prediction drift, and performance degradation in production health models.</p>
-      <div class="tags"><span class="tag">Evidently</span><span class="tag">MLflow</span><span class="tag">Streamlit</span><span class="tag">Python</span></div>
-      <div class="card-links">
-        <a href="https://github.com/Mwauramos/model-monitoring" target="_blank" class="card-link">GitHub →</a>
+        <a href="https://github.com/Mwauramos/hospital-readmission" target="_blank" class="card-link">GitHub</a>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about" style="background: var(--surface); max-width: 100%; padding: 80px 24px;">
-  <div style="max-width: 1100px; margin: 0 auto;">
+<div class="about-wrap">
+  <div class="about-inner">
     <div class="section-label">Background</div>
     <div class="section-title">About</div>
-    <div class="about-grid">
-      <div class="about-text">
-        <p>I'm Amos Mwaura, a Healthcare AI engineer building production-grade AI systems for African health contexts under the ZENIK.AI brand.</p>
-        <p>My work sits at the intersection of epidemiology, clinical data science, and LLM engineering — with a focus on systems that are actually deployable in resource-constrained African health settings.</p>
-        <p>BSc Biochemistry, University of Nairobi. ALX Data Science and Analytics Program. Currently building toward senior Healthcare AI engineering roles.</p>
-        <div class="skills-list">
-          <span class="skill-pill">Python</span>
-          <span class="skill-pill">LangChain</span>
-          <span class="skill-pill">LangGraph</span>
-          <span class="skill-pill">PyTorch</span>
-          <span class="skill-pill">Scikit-learn</span>
-          <span class="skill-pill">Apache Airflow</span>
-          <span class="skill-pill">Streamlit</span>
-          <span class="skill-pill">Plotly Dash</span>
-          <span class="skill-pill">HuggingFace</span>
-          <span class="skill-pill">QLoRA</span>
-          <span class="skill-pill">RAG</span>
-          <span class="skill-pill">MLflow</span>
-          <span class="skill-pill">SQL</span>
-          <span class="skill-pill">GeoPandas</span>
-        </div>
-      </div>
-      <div class="about-card">
-        <h3>At a Glance</h3>
-        <div class="about-item">
-          <div class="about-item-icon">🎓</div>
-          <div class="about-item-text">
-            <strong>BSc Biochemistry</strong>University of Nairobi, 2019 to 2024
-          </div>
-        </div>
-        <div class="about-item">
-          <div class="about-item-icon">📜</div>
-          <div class="about-item-text">
-            <strong>ALX Data Science Program</strong>2023 to 2024
-          </div>
-        </div>
-        <div class="about-item">
-          <div class="about-item-icon">📍</div>
-          <div class="about-item-text">
-            <strong>Based in Kenya</strong>Mombasa and Nairobi
-          </div>
-        </div>
-        <div class="about-item">
-          <div class="about-item-icon">🎯</div>
-          <div class="about-item-text">
-            <strong>Focus</strong>Healthcare AI, LLM Systems, Clinical Data Engineering
-          </div>
-        </div>
-        <div class="about-item">
-          <div class="about-item-icon">🌍</div>
-          <div class="about-item-text">
-            <strong>Context</strong>African health systems, DHIS2, Kenya NHIF, East African epidemiology
-          </div>
-        </div>
+    <div class="about-text">
+      <p>I am a biochemistry graduate and healthcare AI engineer focused on building reliable data and machine learning systems for African health contexts.</p>
+      <p>My work bridges epidemiology, clinical data engineering, statistical modelling, and applied AI. I build systems that turn health data into usable insights, automate research workflows, and make machine learning solutions more reproducible and easier to evaluate.</p>
+      <p>I am particularly interested in public health intelligence, clinical NLP, health data infrastructure, and responsible AI for resource-constrained healthcare settings.</p>
+      <p><strong>My approach: Precision in the data. Rigour in the methods. Impact in the real world.</strong></p>
+      <div class="skills-list">
+        <span class="skill-pill">Python</span>
+        <span class="skill-pill">LangChain</span>
+        <span class="skill-pill">LangGraph</span>
+        <span class="skill-pill">PyTorch</span>
+        <span class="skill-pill">Scikit-learn</span>
+        <span class="skill-pill">Apache Airflow</span>
+        <span class="skill-pill">Streamlit</span>
+        <span class="skill-pill">Plotly Dash</span>
+        <span class="skill-pill">HuggingFace</span>
+        <span class="skill-pill">QLoRA</span>
+        <span class="skill-pill">RAG</span>
+        <span class="skill-pill">MLflow</span>
+        <span class="skill-pill">SQL</span>
+        <span class="skill-pill">GeoPandas</span>
+        <span class="skill-pill">Evidently AI</span>
+        <span class="skill-pill">spaCy</span>
       </div>
     </div>
   </div>
-</section>
+</div>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="section-label">Get In Touch</div>
   <div class="section-title">Contact</div>
@@ -497,8 +372,8 @@
 </section>
 
 <footer>
-  <img src="assets/logo.png.png" alt="ZENIK.AI"/>
-  <p>ZENIK.AI &copy; 2026 &mdash; Amos Mwaura &mdash; Precision • Systems • Impact</p>
+  <img src="assets/logo.png" alt="ZENIK.AI"/>
+  <p>ZENIK.AI &copy; 2026 &nbsp;&middot;&nbsp; Amos Mwaura &nbsp;&middot;&nbsp; Precision &bull; Systems &bull; Impact</p>
 </footer>
 
 </body>
